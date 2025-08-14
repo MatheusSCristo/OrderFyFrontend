@@ -1,1 +1,23 @@
 @import "tailwindcss";
+@plugin "daisyui";
+
+
+
+html{
+  scroll-behavior: smooth;
+}
+
+
+@theme {
+  --color-terracota-50: oklch(0.96 0.03 33.7);
+  --color-terracota-100: oklch(0.91 0.06 33.3);
+  --color-terracota-200: oklch(0.81 0.1 31.9);
+  --color-terracota-300: oklch(0.71 0.13 30);
+  --color-terracota-400: oklch(0.61 0.15 28.1);
+  --color-terracota-500: oklch(0.51 0.14 26.6); /* Cor base #9D4827 */
+  --color-terracota-600: oklch(0.46 0.13 26.2);
+  --color-terracota-700: oklch(0.39 0.11 25.6);
+  --color-terracota-800: oklch(0.32 0.09 25);
+  --color-terracota-900: oklch(0.26 0.07 24.6);
+  --color-terracota-950: oklch(0.19 0.05 24);
+}
