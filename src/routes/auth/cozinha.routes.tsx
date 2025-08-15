@@ -1,15 +1,15 @@
-import LoginKitchen from "../../pages/kitchen/LoginKitchen";
-import RegisterKitchen from "../../pages/kitchen/RegisterKitchen";
+import LoginRestaurant from "../../pages/auth/restaurant/LoginRestaurant";
+import RegisterRestaurant from "../../pages/auth/restaurant/RegisterRestaurant";
 
 export const authRoutes = [
   {
     path: "/auth/cozinha/login",
-    element: <LoginKitchen />,
+    element: <LoginRestaurant />,
     key: "login",
   },
   {
     path: "/auth/cozinha/cadastrar",
-    element: <RegisterKitchen />,
+    element: <RegisterRestaurant />,
     key: "register",
   },
 ];
