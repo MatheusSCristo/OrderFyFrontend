@@ -13,6 +13,7 @@ import {
   Star,
   Users,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const LandingPage = () => {
   // const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -76,10 +77,15 @@ const LandingPage = () => {
         </div>
 
         <div className="navbar-end gap-2">
-          <button className="btn btn-outline btn-sm">Entrar</button>
-          <button className="btn bg-terracota-500 text-white btn-sm">
+          <Link to={"/auth/cozinha/login"} className="btn btn-outline btn-sm">
+            Entrar
+          </Link>
+          <Link
+            to={"/auth/cozinha/cadastrar"}
+            className="btn bg-terracota-500 text-white btn-sm"
+          >
             Teste Grátis
-          </button>
+          </Link>
         </div>
       </div>
 
@@ -134,12 +140,12 @@ const LandingPage = () => {
               </div>
             </div>
 
-            <div className="relative">
-              {/* <img
-                src={heroImage}
+            <div className="relative hover:scale-110 duration-300 transition-all">
+              <img
+                src={`/assets/landing-page-image.png`}
                 alt="Dashboard do sistema de gestão de cozinha"
                 className="w-full h-auto rounded-2xl shadow-2xl"
-              /> */}
+              />
               <div className="absolute -top-4 -right-4 w-20 h-20 bg-accent/20 rounded-full animate-bounce"></div>
               <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-primary/10 rounded-full animate-pulse"></div>
             </div>
