@@ -1,4 +1,5 @@
 import type React from "react";
+import { Toaster } from "react-hot-toast";
 import {
   Navigate,
   Route,
@@ -10,6 +11,7 @@ import { routes } from "./routes";
 const App: React.FC = () => {
   return (
     <>
+      <Toaster position="bottom-right" />
       <Router>
         <Routes>
           {routes.map((route) => (

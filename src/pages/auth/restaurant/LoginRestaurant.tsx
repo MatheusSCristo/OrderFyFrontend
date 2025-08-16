@@ -21,7 +21,7 @@ const LoginRestaurant: React.FC = () => {
                 <legend className="fieldset-legend text-lg">CPF/CNPJ</legend>
                 <input
                   type="text"
-                  className="input border-0 w-full input-lg rounded-lg  bg-[#F3F3F3] placeholder:text-[#C4C4C4]"
+                  className="input border-0 w-full input-lg rounded-lg bg-[#F3F3F3] placeholder:text-[#C4C4C4]"
                   placeholder="Digite seu CPF ou CNPJ"
                 />
               </fieldset>
