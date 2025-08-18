@@ -1,8 +1,11 @@
 import { zodResolver } from "@hookform/resolvers/zod";
+import Cookie from "js-cookie";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { z } from "zod";
+import api from "../../../api/axiosConfig";
+import { getExceptionMessageFromError } from "../../../utils/errorUtils";
 import restaurantImage from "/assets/login-page.png";
 
 const restaurantRegisterSchema = z.object({
@@ -42,14 +45,18 @@ const RegisterRestaurant = () => {
 
   const onSubmit = async (data: RestaurantRegisterForm) => {
     try {
-      // Simular chamada da API
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-
+      const formData = restaurantRegisterSchema.parse(data);
+      const response = await api.post("/restaurants/create", formData);
+      const responseData: {
+        token: string;
+        expiresIn: number;
+      } = response.data;
+      Cookie.set("token", responseData.token, {
+        expires: responseData.expiresIn,
+      });
       toast.success("Conta criada com sucesso! Bem-vindo ao sistema Orderfy.");
-
-      console.log("Dados do registro:", data);
-    } catch {
-      toast.error("Erro ao criar conta. Tente novamente mais tarde.");
+    } catch (e) {
+      toast.error(getExceptionMessageFromError(e));
     }
   };
 

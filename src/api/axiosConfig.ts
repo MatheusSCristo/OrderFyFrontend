@@ -4,6 +4,7 @@ import Cookies from "js-cookie";
 const api = axios.create({
   baseURL: import.meta.env.VITE_API_URL,
 });
+console.log(import.meta.env.VITE_API_URL);
 
 api.interceptors.request.use(
   (config) => {
@@ -33,3 +34,6 @@ api.interceptors.response.use(
     return Promise.reject(error);
   }
 );
+
+
+export default api;
