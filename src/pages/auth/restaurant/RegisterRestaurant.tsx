@@ -6,6 +6,7 @@ import toast from "react-hot-toast";
 import { z } from "zod";
 import api from "../../../api/axiosConfig";
 import { getExceptionMessageFromError } from "../../../utils/errorUtils";
+import { formatCnpj, formatCpf } from "../../../utils/formatter";
 import restaurantImage from "/assets/login-page.png";
 
 const restaurantRegisterSchema = z.object({
@@ -60,24 +61,6 @@ const RegisterRestaurant = () => {
     }
   };
 
-  const formatCpf = (value: string) => {
-    const numbers = value.replace(/\D/g, "");
-    if (numbers.length <= 11) {
-      return numbers.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, "$1.$2.$3-$4");
-    }
-    return value;
-  };
-
-  const formatcnpj = (value: string) => {
-    const numbers = value.replace(/\D/g, "");
-    if (numbers.length <= 11) {
-      return numbers.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, "$1.$2.$3-$4");
-    }
-    return numbers.replace(
-      /(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/,
-      "$1.$2.$3/$4-$5"
-    );
-  };
 
   // Função para avançar para o próximo passo após validação
   const handleNextStep = async () => {
@@ -159,7 +142,7 @@ const RegisterRestaurant = () => {
                       maxLength={17}
                       minLength={17}
                       onChange={(e) => {
-                        e.target.value = formatcnpj(e.target.value);
+                        e.target.value = formatCnpj(e.target.value);
                         register("cnpj").onChange(e);
                       }}
                       className={`w-full p-2 border rounded input bg-[#F3F3F3] placeholder:text-[#C4C4C4] ${
