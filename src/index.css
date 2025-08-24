@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
 @import "tailwindcss";
 @plugin "daisyui";
 
@@ -12,6 +14,8 @@ html{
 }
 
 
+
+
 @theme {
   --color-terracota-50: oklch(0.96 0.03 33.7);
   --color-terracota-100: oklch(0.91 0.06 33.3);
@@ -24,4 +28,9 @@ html{
   --color-terracota-800: oklch(0.32 0.09 25);
   --color-terracota-900: oklch(0.26 0.07 24.6);
   --color-terracota-950: oklch(0.19 0.05 24);
+  --color-beige-500: #f1eae2;
+  --color-beige-300:#FFF8EF;
+  --color-beige-100:#968B7B;
+  --font-lobster:"Lobster",sans-serif;
+
 }
